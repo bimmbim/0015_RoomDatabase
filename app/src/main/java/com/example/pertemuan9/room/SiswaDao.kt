@@ -15,4 +15,8 @@ interface SiswaDao {
 
     @Query("SELECT * FROM tblSiswa ORDER BY nama ASC")
     fun getAllSiswa(): Flow<List<Siswa>>
+
+    //Edit : tambah 3 fungsi berikut
+    @Query(value = "SELECT * from tblSiswa WHERE id = :id")
+    fun getSiswa(id: Int): Flow<Siswa>
 }
